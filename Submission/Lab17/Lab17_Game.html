@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Shape</title>
+		<script src='jquery-2.1.4.min.js'></script>
+		<style>
+			canvas{
+				border: 2px solid black;
+				background-color: white;
+			}
+			body{
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='mycanvas' width='600' height='400'>
+			<p>Your browser does not support the canvas element.</p>
+		</canvas>
+		
+		<h1>Welcome to Shoot the Smiley!</h1>
+		<p>
+		<input type="text" id="score" value="0" readonly="readonly" />
+		</p>
+		
+		<script>
+			const FPS = 1;
+			var x = 0;
+			var y = 20;
+			var image = new Image();
+			image.src = "smiley.jpg";
+			var canvas = null;
+			var context2D = null;
+			var score = 0;
+				
+			canvas = document.getElementById('mycanvas');
+			context2D = canvas.getContext('2d');
+			setInterval(draw, 1000 / FPS);
+
+			function draw()
+			{
+				context2D.clearRect(0, 0, canvas.width, canvas.height);
+				
+				y = 0 + (Math.random()*(330-0));
+				y = Math.round(y);
+				
+				x = 0 + (Math.random()*(330-0));
+				x = Math.round(x);
+			
+				context2D.drawImage(image, x, y);
+			}
+			
+			$('canvas').click(evaluateshot);
+			
+			function evaluateshot(event)
+			{
+				eventx = event.pageX - canvas.offsetLeft;
+				eventy = event.pageY - canvas.offsetTop;
+				
+				if(((eventx >= x) && (eventx <= (x+50))) && ((eventy >= y) && (eventy <= (y+50))))
+				{
+					score++;
+					scoretext = document.getElementById('score');
+					scoretext.value = score;
+				}
+			}
+		</script>
+	</body>
+</html>

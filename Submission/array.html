@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Lab 11: Array</title>
+	</head>
+	<body>
+		<script>
+			input1 = prompt("Enter 1st word");
+			input2 = prompt("Enter 2nd word");
+			input3 = prompt("Enter 3rd word");
+			input4 = prompt("Enter 4th word");
+			input5 = prompt("Enter 5th word");
+			
+			inputarray = new Array();
+			inputarray[0] = input1;
+			inputarray[1] = input2;
+			inputarray[2] = input3;
+			inputarray[3] = input4;
+			inputarray[4] = input5;
+			document.write("Original Array: " + "<br>");
+			document.write(inputarray + "<br><br>");
+			
+			inputarray.sort();
+			document.write("Sorted Array: " + "<br>");
+			document.write(inputarray + "<br><br>");
+			
+			removed1 = inputarray.pop();
+			removed2 = inputarray.pop();
+			document.write("Removed Words: " + "<br>");
+			document.write(removed1 + "," + removed2 + "<br><br>");
+			
+			document.write("Final Array: " + "<br>");
+			document.write(inputarray + "<br><br>");
+		</script>
+	</body>
+</html>

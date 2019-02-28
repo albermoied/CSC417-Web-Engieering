@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Web Engineering</title>
+	</head>
+	<body>
+		<script>
+			function Book(title, author, price)
+			{
+				this.title = title;
+				this.author = author;
+				this.price = price;
+				
+				this.getTitle = function()
+				{
+					return this.title;
+				}
+				this.setTitle = function(title)
+				{
+					this.title = title;
+				}
+				this.getAuthor = function()
+				{
+					return this.author;
+				}
+				this.setAuthor = function(author)
+				{
+					this.author = author;
+				}
+				this.getPrice = function()
+				{
+					return this.price;
+				}
+				this.setPrice = function(price)
+				{
+					this.price = price;
+				}
+				this.showBook = function() 
+				{
+					document.write("Title : " +this.getTitle()+"<br>");
+					document.write("Author: " +this.getAuthor()+"<br>");
+					document.write("Price : " +this.getPrice()+"<br><br>");
+				}
+			}
+			
+			Book.prototype.updatePrice = function(myprice)
+			{
+				this.price = myprice;
+			}
+			
+			obj = new Book("The Great Expectations", "Charles Dickens", "80");
+			obj.showBook();
+			
+			obj.updatePrice("100");
+			obj.showBook();
+			
+		</script>
+	</body>
+</html>

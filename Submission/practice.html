@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Practice Exercise</title>
+		<script>
+			function validate(form)
+			{
+				fail = validateInput(form.usname.value)
+				
+				if (fail == "") return true
+				else{alert(fail); return false}
+			}
+			function validateInput(field)
+			{
+				return (field == "") ? "No input was entered.\n" : ""
+			}
+		</script>
+	</head>
+	<body>
+	<form method="post" action="array.html" onsubmit="return validate(this)">
+	Name: <input type="text" name="usname">
+		<input type="submit" value="Submit">
+	</body>
+</html>
