@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="lab80.php" method="get">
+<form action="lab8.php" method="get">
 Name: <input type="text" name="name"><br>
 
 <input type="submit">
